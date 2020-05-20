@@ -1,25 +1,7 @@
-const axios = require("axios");
 const fetch = require("node-fetch");
 
 class MeuControleDePontoClient {
   constructor() {
-    this.client = axios.create({
-      baseURL: process.env.PONTO_URL + "day_records/add_now",
-      headers: {
-        "Content-type": "application/x-www-form-urlencoded",
-      },
-      withCredentials: true,
-    });
-
-    this.client.interceptors.request.use((request) => {
-      console.log("Starting Request", request);
-      return request;
-    });
-
-    this.client.interceptors.response.use((response) => {
-      console.log("Response:", response);
-      return response;
-    });
   }
 
   addNow() {
